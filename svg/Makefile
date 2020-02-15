@@ -13,4 +13,4 @@ TOOLPATH_DEPS := ../../FenrusCNCtools/toolpath/toolpath ../../FenrusCNCtools/too
 
 
 clean:
-	@rm *.nc
+	@rm -f *.nc
