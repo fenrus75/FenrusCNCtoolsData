@@ -1,4 +1,4 @@
-OUTPUTS := $(patsubst %.svg,%.nc,$(wildcard *.svg))
+OUTPUTS := $(patsubst %.csv,%.nc,$(wildcard *.csv))
 
 
 all: $(OUTPUTS)
@@ -7,10 +7,11 @@ all: $(OUTPUTS)
 TOOLPATH_RUN := ../../FenrusCNCtools/toolpath/toolpath --library ../../FenrusCNCtools/toolpath/toollib.csv  --quiet
 TOOLPATH_DEPS := ../../FenrusCNCtools/toolpath/toolpath ../../FenrusCNCtools/toolpath/toollib.csv 
 
-%.nc : %.svg $(TOOLPATH_DEPS)
+%.nc : %.csv $(TOOLPATH_DEPS)
 	@echo "Processing $< ==> $@"
-	@$(TOOLPATH_RUN) `cat $<.opts`  $<  
+	@$(TOOLPATH_RUN) -t 201  $<  
 
 
 clean:
 	@rm *.nc
+	
