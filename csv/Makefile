@@ -11,6 +11,10 @@ TOOLPATH_DEPS := ../../FenrusCNCtools/toolpath/toolpath ../../FenrusCNCtools/too
 	@echo "Processing $< ==> $@"
 	@$(TOOLPATH_RUN) -t 18  $<  
 
+joint.nc : joint.csv $(TOOLPATH_DEPS)
+	@echo "Processing $< ==> $@"
+	@$(TOOLPATH_RUN) -t 29  $<  
+
 
 clean:
 	@rm -f *.nc
