@@ -9,7 +9,7 @@ TOOLPATH_DEPS := ../../FenrusCNCtools/toolpath/toolpath ../../FenrusCNCtools/too
 
 %.nc : %.csv $(TOOLPATH_DEPS)
 	@echo "Processing $< ==> $@"
-	@$(TOOLPATH_RUN) -t 201  $<  
+	@$(TOOLPATH_RUN) -t 18  $<  
 
 
 clean:
